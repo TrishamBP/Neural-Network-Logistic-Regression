@@ -1,3 +1,14 @@
+import numpy as np
+import copy
+import matplotlib.pyplot as plt
+import h5py
+import scipy
+from PIL import Image
+from scipy import ndimage
+from lr_utils import load_dataset
+from public_tests import *
+
+
 # change this to the name of your image file
 my_image = "my_image.jpg"   
 
@@ -10,15 +21,7 @@ image = image.reshape((1, num_px * num_px * 3)).T
 my_predicted_image = predict(logistic_regression_model["w"], logistic_regression_model["b"], image)
 
 print("y = " + str(np.squeeze(my_predicted_image)) + ", your algorithm predicts a \"" + classes[int(np.squeeze(my_predicted_image)
-import numpy as np
-import copy
-import matplotlib.pyplot as plt
-import h5py
-import scipy
-from PIL import Image
-from scipy import ndimage
-from lr_utils import load_dataset
-from public_tests import *
+
 
 %matplotlib inline
 %load_ext autoreload
